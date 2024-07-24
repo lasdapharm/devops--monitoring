@@ -1,0 +1,17 @@
+[Unit]
+Description=DevOpsFetch Monitoring Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/devopsfetch
+Restart=on-failure
+StandardOutput=file:/var/log/devopsfetch.log
+StandardError=file:/var/log/devopsfetch.err
+User=ubuntu
+Group=ubuntu
+
+[Install]
+WantedBy=multi-user.target
+
+
